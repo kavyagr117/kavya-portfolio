@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background-color: #07090b;
+  color: #cbd5e1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Text selection ─── */
+::selection {
+  background-color: rgba(62, 207, 142, 0.18);
+  color: #e2e8f0;
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #07090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3ecf8e;
+}
+
+/* ─── Dot-grid background ─── */
+.dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+}
+
+/* ─── Terminal card ─── */
+.terminal {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: var(--font-mono), monospace;
+}
+
+.terminal-header {
+  background: #161b22;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+/* ─── Card surface ─── */
+.card {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.11);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Section heading accent line ─── */
+.section-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.055);
+  flex: 1;
+  margin-left: 16px;
+}
+
+/* ─── Skill pill ─── */
+.skill-pill {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.skill-pill:hover {
+  border-color: rgba(62, 207, 142, 0.3);
+  color: #3ecf8e;
+}
+
+/* ─── Accent tag (tech stack badges) ─── */
+.tech-badge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  color: rgba(62, 207, 142, 0.75);
+  background: rgba(62, 207, 142, 0.07);
+  border: 1px solid rgba(62, 207, 142, 0.13);
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+/* ─── Navbar blur surface ─── */
+.nav-blur {
+  background: rgba(7, 9, 11, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Experience tab active indicator ─── */
+.exp-tab-active {
+  color: #3ecf8e;
+  background: rgba(62, 207, 142, 0.05);
+}
+
+/* ─── Button primary ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: #07090b;
+  background: #3ecf8e;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.15s;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: rgba(62, 207, 142, 0.88);
+  transform: translateY(-1px);
+}
+
+/* ─── Button ghost ─── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #e2e8f0;
+  transform: translateY(-1px);
+}
